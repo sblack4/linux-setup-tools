@@ -4,6 +4,7 @@
 # ### to run the test container 
 # just type the below line into your console
 #   this line >>> docker build -t test ./ && docker run -it test /bin/bash <<<
+#   (this build a container named test and enters it)
 #   and manually make sure it's up to spec
 #   you can also test on http://play-with-docker.com/ 
 # ###

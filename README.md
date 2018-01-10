@@ -29,13 +29,27 @@ chmod +x setup.sh
 
 Some knowledge of bash & Linux or the ability to use google :smiley:
 
+Also, I've been using Docker to test
+
 
 ### Installing
 
 1. Fork this repository
-2. Customize the `main()` funtion in `setup.sh`
+2. Add your favorite commands to the `COMMANDS` in `setup.sh` (it starts on line 17)
 3. (optional) Use a url-shortener like [goo.gl/](https://goo.gl/) to shorten the url
+4. Presto! You are ready to test it out, I recommend using 
+[the Docker playground](http://play-with-docker.com/) so you don't mess up anything locally. 
 
+### Testing
+
+
+**This is dangerous as you can overwrite your local files**
+
+See the dockerfile for more detailed instructions, I test by running 
+```bash 
+docker build -t test ./ && docker run -it test /bin/bash
+```
+and manually inspecting the container. 
 
 ## Contributing
 
