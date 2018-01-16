@@ -62,19 +62,6 @@ function eval_command() {
     }
 }
 
-function get_yes_no() {
-    local command=$1
-    local valid_input=
-
-    echo "Execute the below command? Type n to skip"
-    echo "    $command"
-    read ouput 
-    if [$output == "n"]; then
-
-    fi 
-
-}
-
 function usage() {
 cat << EOF
 Usage: $0 [-ih] [-d directory]
@@ -82,15 +69,6 @@ Usage: $0 [-ih] [-d directory]
     -i                   interactive
     -h                   displays help / usage  
 EOF
-}
-
-function err() {
-  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@" >&2
-  exit 1
-}
-
-function stop_on_error() {
-    set -e
 }
 
 get_opts() {
@@ -125,9 +103,7 @@ main() {
 
     get_opts "$@"
 
-    get_dot_files
-
-    install_necessary_programs
+    loop_through_commands
 
     exit 0
 }
